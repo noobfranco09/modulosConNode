@@ -22,8 +22,7 @@ import mysql from 'mysql2/promise';
 
 
 try {
-  const miConexion = await mysql.createConnection({
-    host: process.env.HOST,
+  const miConexion = await mysql.createConnection({   
     user: process.env.DB_USER,
     database: process.env.DB_DATABASE,
     password: process.env.DB_PASSWORD,
