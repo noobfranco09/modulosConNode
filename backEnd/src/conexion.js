@@ -20,12 +20,13 @@ export async function connectDB() {
 
 import mysql from 'mysql2/promise';
 
+
 try {
   const miConexion = await mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    database: 'adso',
-    password: ''
+    host: process.env.HOST,
+    user: process.env.DB_USER,
+    database: process.env.DB_DATABASE,
+    password: process.env.DB_PASSWORD,
   });
   const sql = "SELECT * FROM aprendiz";
 //const [rows, fields] = await miConexion.query(sql);
